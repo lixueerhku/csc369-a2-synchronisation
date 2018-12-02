@@ -1,0 +1,5 @@
+Name: LI XUEER
+UtorID(s): lixueer
+Git commit hash:cade6b43d225dd49fd744b1b52d1778586834b3f
+Discussion:
+Starvation will happen using this monitor: 1. There is no priority scheduling; 2. Each lane has its own lock which is shared by two threads: car_arrive and car_across; 3. The wait condition for car_arrive is that the buffer is full. If car_arrive is signalled by car_across and is moved into the ready queue, there is no other thread that can make the buffer full again other than itself. The capacity of the buffer is limited. Therefore, it will not be kept waiting forever. Similarly, The wait condition for car_cross is that the buffer is empty. If car_across is signalled by car_arrive and is moved into the ready queue, there is no other thread that can make the buffer empty again other than itself.
